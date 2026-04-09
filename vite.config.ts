@@ -4,16 +4,15 @@ import path from 'path';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  // IMPORTANT: Change 'YOUR_REPO_NAME' to the exact name of your GitHub repository.
-  // For example, if your repo is named "portfolio", this should be '/portfolio/'
-  // If you are deploying to skpthiran.github.io directly, change this to '/'
-  base: '/YOUR_REPO_NAME/', 
+  // Make sure this is your actual repo name! 
+  base: '/Thiran-Wijesingha-portfolio/', 
   
   plugins: [react(), tailwindcss()],
   
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src'),
+      // Changed from './src' back to '.' to fix the double src issue
+      '@': path.resolve(__dirname, '.'),
     },
   },
   
