@@ -232,7 +232,8 @@ export default function App() {
               status: "Active",
               type: "Team Project — E-Commerce Platform",
               desc: "Full-stack clothing e-commerce platform built as a university project. Features JWT authentication, product management, and a responsive React storefront backed by Spring Boot APIs.",
-              stack: "React.js, Spring Boot, MySQL, JWT, REST API"
+              stack: "React.js, Spring Boot, MySQL, JWT, REST API",
+              link: "https://clothstreet.xyz/"
             },
             {
               title: "Aura App",
