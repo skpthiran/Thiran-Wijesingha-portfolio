@@ -241,7 +241,8 @@ export default function App() {
               status: "Active",
               type: "Team Project — Social Discovery Platform",
               desc: "A social platform connecting users through shared interests and activities. Built matchmaking logic, activity feeds, and user profile systems with a Node.js backend and React frontend.",
-              stack: "React.js, Node.js, MySQL, REST API"
+              stack: "React.js, Node.js, MySQL, REST API",
+              link: "https://skpthiran.github.io/skpthiran-Aura-The-Event-Management-system/"
             },
             {
               title: "Personal Portfolio",
