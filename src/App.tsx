@@ -223,7 +223,8 @@ export default function App() {
               status: "Active",
               type: "Startup Project — Social Media Platform",
               desc: "Next-generation social platform built as part of the Sorrel ecosystem. Engineered with a unified monorepo architecture, integrating AI agents and semantic search capabilities.",
-              stack: "React.js, Vite, Tailwind CSS, Supabase pgvector, AI Agents."
+              stack: "React.js, Vite, Tailwind CSS, Supabase pgvector, AI Agents.",
+              link: "https://skpthiran.github.io/Echo/"
             },
             {
               title: "Cloth Street",
@@ -293,9 +294,20 @@ export default function App() {
                         {project.stack}
                       </div>
                     </div>
-                    <div className="w-12 h-12 rounded-full border border-current flex items-center justify-center group-hover:bg-accent group-hover:text-ink group-hover:border-accent transition-all duration-300">
-                      <ArrowUpRight className="w-5 h-5" />
-                    </div>
+                    {project.link ? (
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-12 h-12 rounded-full border border-current flex items-center justify-center group-hover:bg-accent group-hover:text-ink group-hover:border-accent transition-all duration-300"
+                      >
+                        <ArrowUpRight className="w-5 h-5" />
+                      </a>
+                    ) : (
+                      <div className="w-12 h-12 rounded-full border border-current flex items-center justify-center group-hover:bg-accent group-hover:text-ink group-hover:border-accent transition-all duration-300">
+                        <ArrowUpRight className="w-5 h-5" />
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
