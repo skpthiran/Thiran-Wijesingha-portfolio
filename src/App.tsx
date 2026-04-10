@@ -136,7 +136,7 @@ export default function App() {
                     date: "Jan 2024"
                   },
                   {
-                    degree: "G.C.E. Ordinary Level (English Medium)",
+                    degree: "G.C.E. Ordinary Level (SINHALA MEDIUM)",
                     inst: "Rahula college - Matara",
                     date: "Apr 2023"
                   }
