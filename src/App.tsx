@@ -2,19 +2,51 @@ import { motion, useScroll, useTransform } from "motion/react";
 import { ArrowRight, ArrowUpRight, Code2, Terminal } from "lucide-react";
 import { Cursor } from "./components/Cursor";
 import { Marquee } from "./components/Marquee";
-import { useRef } from "react";
+import { FormEvent, useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
 
 const customEasing = [0.76, 0, 0.24, 1];
 
+const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID ?? "";
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID ?? "";
+const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY ?? "";
+
 export default function App() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const formRef = useRef<HTMLFormElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end end"],
   });
 
+  const [formStatus, setFormStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+
   const scrollToContact = () => {
     document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!formRef.current) return;
+    if (!EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID || !EMAILJS_PUBLIC_KEY) {
+      console.error("EmailJS is not configured. Set VITE_EMAILJS_SERVICE_ID, VITE_EMAILJS_TEMPLATE_ID, and VITE_EMAILJS_PUBLIC_KEY in your .env file.");
+      setFormStatus("error");
+      return;
+    }
+    setFormStatus("sending");
+    try {
+      await emailjs.sendForm(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        formRef.current,
+        { publicKey: EMAILJS_PUBLIC_KEY }
+      );
+      setFormStatus("success");
+      formRef.current.reset();
+    } catch (err) {
+      console.error("EmailJS send failed:", err);
+      setFormStatus("error");
+    }
   };
 
   return (
@@ -378,21 +410,31 @@ export default function App() {
             </div>
             
             <div className="bg-bg text-ink p-8 border border-ink/10">
-              <form className="flex flex-col gap-6" onSubmit={(e) => e.preventDefault()}>
+              <form ref={formRef} className="flex flex-col gap-6" onSubmit={handleSubmit}>
                 <div className="flex flex-col gap-2">
                   <label className="font-mono text-xs uppercase tracking-widest opacity-50">Name</label>
-                  <input type="text" className="bg-transparent border-b border-ink/20 py-2 font-mono text-sm focus:outline-none focus:border-accent transition-colors hover-trigger" placeholder="John Doe" />
+                  <input required name="from_name" type="text" className="bg-transparent border-b border-ink/20 py-2 font-mono text-sm focus:outline-none focus:border-accent transition-colors hover-trigger" placeholder="John Doe" />
                 </div>
                 <div className="flex flex-col gap-2">
                   <label className="font-mono text-xs uppercase tracking-widest opacity-50">Email</label>
-                  <input type="email" className="bg-transparent border-b border-ink/20 py-2 font-mono text-sm focus:outline-none focus:border-accent transition-colors hover-trigger" placeholder="john@example.com" />
+                  <input required name="reply_to" type="email" className="bg-transparent border-b border-ink/20 py-2 font-mono text-sm focus:outline-none focus:border-accent transition-colors hover-trigger" placeholder="john@example.com" />
                 </div>
                 <div className="flex flex-col gap-2">
                   <label className="font-mono text-xs uppercase tracking-widest opacity-50">Message</label>
-                  <textarea rows={3} className="bg-transparent border-b border-ink/20 py-2 font-mono text-sm focus:outline-none focus:border-accent transition-colors resize-none hover-trigger" placeholder="Let's build something..." />
+                  <textarea required name="message" rows={3} className="bg-transparent border-b border-ink/20 py-2 font-mono text-sm focus:outline-none focus:border-accent transition-colors resize-none hover-trigger" placeholder="Let's build something..." />
                 </div>
-                <button className="bg-ink text-bg font-mono text-xs font-bold uppercase tracking-widest py-4 mt-4 hover:bg-accent hover:text-ink transition-colors hover-trigger">
-                  Send Message
+                {formStatus === "success" && (
+                  <p role="status" aria-live="polite" className="font-mono text-xs text-accent uppercase tracking-widest">Message sent — I'll be in touch!</p>
+                )}
+                {formStatus === "error" && (
+                  <p role="alert" aria-live="assertive" className="font-mono text-xs text-red-500 uppercase tracking-widest">Something went wrong. Please try again.</p>
+                )}
+                <button
+                  type="submit"
+                  disabled={formStatus === "sending"}
+                  className="bg-ink text-bg font-mono text-xs font-bold uppercase tracking-widest py-4 mt-4 hover:bg-accent hover:text-ink transition-colors hover-trigger disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {formStatus === "sending" ? "Sending..." : "Send Message"}
                 </button>
               </form>
             </div>
