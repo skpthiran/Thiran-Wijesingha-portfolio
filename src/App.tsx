@@ -277,6 +277,15 @@ export default function App() {
               link: "https://skpthiran.github.io/skpthiran-Aura-The-Event-Management-system/"
             },
             {
+              title: "SIDEQUEST",
+              year: "2026",
+              status: "Active",
+              type: "Individual Project — Accountability Platform",
+              desc: "Premium accountability platform for Gen Z connecting users in 30-day mission pods. Features intelligent pod matching, streak-based gamification, AI coaching, and push notifications. Built with timezone-aware algorithms and real-time synchronization.",
+              stack: "TypeScript, React, Vite, Supabase, PostgreSQL, Groq LLM, Cloudflare Workers",
+              link: "https://sidequestthiran.netlify.app"
+            },
+            {
               title: "Personal Portfolio",
               year: "2025",
               status: "Completed",
