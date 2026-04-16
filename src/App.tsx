@@ -283,7 +283,7 @@ export default function App() {
               type: "Individual Project — Accountability Platform",
               desc: "Premium accountability platform for Gen Z connecting users in 30-day mission pods. Features intelligent pod matching, streak-based gamification, AI coaching, and push notifications. Built with timezone-aware algorithms and real-time synchronization.",
               stack: "TypeScript, React, Vite, Supabase, PostgreSQL, Groq LLM, Cloudflare Workers",
-              link: "https://sidequestthiran.netlify.app"
+              link: "https://sidequest-bm7.pages.dev/app/coach"
             },
             {
               title: "Personal Portfolio",
