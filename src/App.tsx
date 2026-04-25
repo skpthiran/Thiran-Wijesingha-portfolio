@@ -290,7 +290,7 @@ export default function App() {
               year: "2026",
               status: "Active",
               type: "Individual Project — AI-Powered Web App",
-              desc: "Built an app where users upload two photos and a multi-model AI judges who wins — with brutal, specific verdicts that sound nothing like generic AI output. Engineered a 4-stage prompt pipeline (visual anchoring, independent scoring, blind verdict writing, and improvement tips) to get the AI judging actual human attractiveness rather than photo quality. Ships a champion leaderboard with live challenges, Hot or Not rating mode, viral share cards, and a full auth + public explore feed.",
+              desc: "AI-powered photo battle app where users upload two photos and a multi-model AI delivers brutal, specific verdicts. Features a 4-stage prompt pipeline, champion leaderboard, Hot or Not rating mode, viral share cards, and a public explore feed.",
               stack: "React · TypeScript · Cloudflare Workers · Supabase · Tailwind CSS",
               link: "https://7e0e8420.vrsus.pages.dev/"
             },
