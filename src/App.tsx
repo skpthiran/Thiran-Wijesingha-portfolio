@@ -274,7 +274,7 @@ export default function App() {
               type: "Team Project — Social Discovery Platform",
               desc: "A social platform connecting users through shared interests and activities. Built matchmaking logic, activity feeds, and user profile systems with a Node.js backend and React frontend.",
               stack: "React.js, Node.js, MySQL, REST API",
-              link: "https://skpthiran.github.io/skpthiran-Aura-The-Event-Management-system/"
+              link: "https://aura-web-e50.pages.dev/"
             },
             {
               title: "SIDEQUEST",
@@ -283,7 +283,7 @@ export default function App() {
               type: "Individual Project — Accountability Platform",
               desc: "Premium accountability platform for Gen Z connecting users in 30-day mission pods. Features intelligent pod matching, streak-based gamification, AI coaching, and push notifications. Built with timezone-aware algorithms and real-time synchronization.",
               stack: "TypeScript, React, Vite, Supabase, PostgreSQL, Groq LLM, Cloudflare Workers",
-              link: "https://sidequestthiran.netlify.app"
+              link: "https://sidequest-bm7.pages.dev/"
             },
             {
               title: "VRSUS",
