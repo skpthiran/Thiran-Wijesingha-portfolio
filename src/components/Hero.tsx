@@ -7,7 +7,7 @@ export default function Hero() {
       <div className="absolute inset-0 z-0">
         <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-gold/10 rounded-full blur-[120px] mix-blend-screen pointer-events-none"></div>
         <div className="absolute bottom-0 right-1/4 w-[600px] h-[400px] bg-charcoal rounded-full blur-[150px] pointer-events-none"></div>
-        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.03] pointer-events-none mix-blend-overlay"></div>
+        <div className="absolute inset-0 bg-[url('/Thiran-Wijesingha-portfolio/noise.svg')] opacity-[0.03] pointer-events-none mix-blend-overlay"></div>
       </div>
 
       <div className="container mx-auto max-w-7xl relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
@@ -108,7 +108,7 @@ export default function Hero() {
           <div className="absolute inset-0 rounded-[2rem] overflow-hidden border border-ivory/10 transform -rotate-1 group-hover:rotate-0 group-hover:[transform:rotateX(2deg)_rotateY(-4deg)] transition-all duration-700 ease-out bg-charcoal shadow-2xl">
             {/* The Image */}
             <img
-              src="/portrait.jpg"
+              src="/Thiran-Wijesingha-portfolio/portrait.jpg"
               alt="Thiran Wijesingha"
               className="absolute inset-0 w-full h-full object-cover object-[center_20%] origin-center transform scale-105 group-hover:scale-110 transition-transform duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] filter brightness-95 group-hover:brightness-105"
             />
