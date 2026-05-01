@@ -31,9 +31,9 @@ export default function Hero() {
             transition={{ duration: 1, delay: 0.3 }}
             className="text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.05] font-serif font-medium tracking-tight text-ivory"
           >
-            Building digital products that look{" "}
-            <span className="text-gold italic pr-2">exceptional</span> and work
-            flawlessly.
+            Building AI systems with{" "}
+            <span className="text-gold italic pr-2">production depth</span> — not
+            demos.
           </motion.h1>
 
           <motion.p

@@ -19,10 +19,10 @@ export default function About() {
         >
           <span className="text-gold text-xs uppercase tracking-[0.2em] font-semibold mb-6 block">About Me</span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-light leading-[1.3] tracking-tight text-ivory mb-8">
-            I’m Thiran Wijesingha, a Computer Science undergraduate passionate about building full-stack digital products that combine strong engineering with visual quality and user impact.
+            Building privacy-preserving AI and emotional infrastructure.
           </h2>
           <p className="text-ivory/60 text-lg leading-relaxed font-light mb-10">
-            I enjoy transforming ideas into polished experiences, and I’m especially drawn to products that feel modern, useful, and memorable. My work blends product thinking, frontend sensitivity, backend execution, and AI-assisted development workflows.
+            I’m Thiran Wijesingha, a third-year Computer Science student currently seeking a professional placement. With five live products deployed, my focus lies at the intersection of privacy-first AI systems and digital emotional infrastructure—building products that protect user data while fostering deep, meaningful resonance.
           </p>
 
           <div className="grid grid-cols-2 gap-6">

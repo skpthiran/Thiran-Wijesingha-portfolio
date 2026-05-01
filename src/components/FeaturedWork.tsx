@@ -6,8 +6,8 @@ const PROJECTS = [
     id: "forge",
     title: "FORGE",
     category: "AI Brand Strategy Platform",
-    description: "An AI-powered platform that helps users build their brand blueprint with strategic clarity, direction, and structured identity development.",
-    tech: ["AI", "Branding", "Strategy", "Product Design"],
+    description: "Built a AI-brand blueprint platform with a 5-engine strategy workflow, Stripe subscription integration, and automated PDF brand identity export.",
+    tech: ["React", "TypeScript", "Vite", "Stripe"],
     link: "https://forge-7f8.pages.dev/",
     featured: true,
     visuals: {
@@ -114,8 +114,8 @@ const PROJECTS = [
     id: "echo",
     title: "ECHO",
     category: "Social Platform Concept",
-    description: "A next-generation social platform centered around resonance, emotional connection, and meaningful interaction.",
-    tech: ["React", "Tailwind CSS", "pgvector", "AI Agents"],
+    description: "Built a privacy-first thought-matching platform using a custom STEER transformation — a deterministic 768x768 linear layer that preserves semantic similarity while making raw recovery impractical. Exploring CKKS/OpenFHE homomorphic encryption for server-side matching on Cloudflare Workers.",
+    tech: ["React", "Tailwind CSS", "pgvector", "OpenFHE"],
     link: "https://skpthiran.github.io/Echo/#invitation",
     featured: false,
     visuals: {
@@ -145,7 +145,7 @@ const PROJECTS = [
     title: "AURA",
     category: "Real-Time Social Engine",
     description: "A social platform focused on real-time presence, live moments, and event-driven interaction.",
-    tech: ["React", "Node.js", "MySQL", "REST APIs"],
+    tech: ["TypeScript", "PostGIS", "MapLibre GL", "Supabase"],
     link: "https://aura-web-e50.pages.dev/",
     featured: false,
     visuals: {
